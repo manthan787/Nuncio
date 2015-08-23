@@ -1,0 +1,20 @@
+{
+    "name": "manthan/nuncio",
+    "description": "Turn your customer messages/emails into mustache-style templates. Just create one template for your message and nuncio will replace tags with customer details.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manthan Thakar",
+            "email": "manthant15@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Manthan\\Nuncio\\" : "src/"
+        }
+    }
+}
