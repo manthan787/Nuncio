@@ -1,6 +1,15 @@
 <?php
 namespace Manthan\Nuncio;
-
+/**
+ * This class exemplifies the implementation of MessengerInterface.
+ *
+ * While using Nuncio in your application, You are supposed to write your own class
+ * that adheres to MessengerInterface.
+ *
+ * This gives you the flexibility to use any messaging Service(Twilio, Plivo, or even php's mail() function)
+ * that you may prefer, while still being able to use this package.
+ *
+ */
 class DemoMessenger implements MessengerInterface {
 
   /**
