@@ -17,7 +17,7 @@ class PromotionalMessageServiceTest extends PHPUnit_Framework_TestCase {
       $user2->phone_number = '9877667766';
 
       $recepients = [$user1, $user2];
-      $message = "Hello {{name}}, Your age is {{age}}.";
+      $message = "Hello {{ name }}, Your age is {{ age }}.";
       $res = $nuncio->from('LM-NUNCIO')->to($recepients)->send('',$message);
 
       $this->assertTrue($res, 'All Messages Were Sent!');

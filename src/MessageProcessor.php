@@ -48,7 +48,7 @@ class MessageProcessor {
    */
   private function constructPattern($keyword)
   {
-      $pattern = '/{{'.$keyword.'}}/';
+      $pattern = '/{{\s*'.$keyword.'\s*}}/';
       return $pattern;
   }
 }
