@@ -22,22 +22,19 @@ For example, you'd like to notify your users via SMS using following template in
 
     Hello {{name}}, Your fees ${{fees}} are pending.
 
-To process this message this what you'd do:
-
+To process this message this is what you'd do:
+```php
     use Manthan\Nuncio\Nuncio
-
-    // Create a new notifier by extending Nuncio
 
     class SMSNotifier extends Nuncio
     {
       protected $keywords = array('name', 'fees');
     }
-
+```
 Looks very simple, right?
 
 Now to use this newly created notifier do the following:
-
-    // Usage
+```php
     $SMS_Service = new TwilioService() // This must implement Manthan\Nuncio\MessengerInterface
 
     $processor = new Manthan\Nuncio\MessageProcessor();
@@ -50,7 +47,7 @@ Now to use this newly created notifier do the following:
 
     $recepients = [$user];
     $notifier->from('YOUR-NUMBER')->to($recepients)->send($subject, $message);
-
+```
 
 The code above, sends following message to the number 78787878:
 
@@ -65,10 +62,8 @@ Nuncio is super flexible. As shown above, you can use any of your Message Servic
 As you can see in the above example, Nuncio by default looks for the property 'number' on each of the recepients and sends message to that number.
 
 But it is highly probable that you're not using number property in your User objects. In which case, you can change the default number field like so:
-
+```php
     use Manthan\Nuncio\Nuncio
-
-    // Create a new notifier by extending Nuncio
 
     class SMSNotifier extends Nuncio
     {
@@ -78,7 +73,7 @@ But it is highly probable that you're not using number property in your User obj
       // Suppose your user's phone number is denoted by its phone_number property
       protected $number_field = 'phone_number';
     }
-
+```
 ### Running Tests
 
 You can run the tests using :
