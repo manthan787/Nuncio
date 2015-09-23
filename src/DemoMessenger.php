@@ -55,7 +55,7 @@ class DemoMessenger implements MessengerInterface {
         throw new \Exception("Invalid Recepient Phone Number");
       }
       $print = sprintf("Sender : %s, Receiver: %s, Message: %s", $this->sender, $this->recepient, $message);
-      echo $print . '<br/>';
+      echo $print . '\n';
   }
 
 }
