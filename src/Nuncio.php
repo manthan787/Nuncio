@@ -79,9 +79,9 @@ abstract class Nuncio
     {
         $replacements = $this->constructReplacementsArray($recepient);
         $processed_message = $this->processor->with($message, $replacements)->process();
-        $processed_number = $this->addCountryCode($recepient->{$this->number_field});
+        $number = $recepient->{$this->number_field};
         $this->messenger->from($this->sender)
-                        ->to($processed_number)
+                        ->to($number)
                         ->notify($subject, $processed_message);
     }
     return true;
@@ -101,18 +101,6 @@ abstract class Nuncio
       }
       return $keywords_replacements;
   }
-
-  private function addCountryCode($number)
-  {
-      $number_length = strlen($number);
-      if($number_length === 10)
-      {
-        return "+91".$number;
-      }
-
-      return $number;
-  }
-
 
 }
 
