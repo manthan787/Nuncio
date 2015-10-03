@@ -8,7 +8,7 @@ You can install Nuncio using Composer.
 
     {
        "require": {
-          "manthan/nuncio": "1.*"
+          "manthan/nuncio": "1.1.*"
        }
     }
 
